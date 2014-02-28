@@ -1,11 +1,11 @@
-(ns misquotes-gilt.handler
+(ns compojure-gilt-api.handler
   (:use compojure.core)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [clj-http.client :as client]
             [clojure.data.json :as json]))
 
-(def api-key "INSERT YOUR GILT API KEY HERE")
+(def api-key (get (System/getenv) "API_KEY"))
 
 (defn get-json-from-gilt-url[url]
   (json/read-str
@@ -35,9 +35,6 @@
 (defn get-random-product-detail-url[]
   (rand-nth (get-product-detail-urls))
 )
-
-(def url "https://api.gilt.com/v1/products/1001502742/detail.json")
-
 
 (defn get-product-image-url-from-json[url]
   ((first
