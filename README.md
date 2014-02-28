@@ -1,6 +1,7 @@
-# misquotes-gilt
+compojure-gilt-api
+==================
 
-FIXME
+a sample compojure ring server that serves random products from the gilt men's api
 
 ## Prerequisites
 
@@ -16,4 +17,4 @@ To start a web server for the application, run:
 
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2014 Infomofo
